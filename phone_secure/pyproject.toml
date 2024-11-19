@@ -1,0 +1,134 @@
+# Este proyecto fue generado usando template de Briefcase
+
+[tool.briefcase]
+project_name = "phone_secure"
+bundle = "com.example"
+version = "0.0.1"
+url = "https://example.com/phone_secure"
+license.file = "LICENSE"
+author = "joaquin and melissa"
+author_email = "dracocrak@gmail.com"
+
+[tool.briefcase.app.phone_secure]
+formal_name = "PhoneSecure"
+description = "ENCRIPTAR"
+long_description = """More details about the app should go here."""
+sources = [
+    "src/phone_secure",
+]
+test_sources = [
+    "tests",
+]
+
+# Agregar las dependencias necesarias
+requires = [
+    "toga-android~=0.4.7",
+    "cryptography",  # Necesario para el cifrado y descifrado
+]
+
+test_requires = [
+    "pytest",
+]
+
+[tool.briefcase.app.phone_secure.android]
+# Dependencias específicas para Android
+requires = [
+    "toga-android~=0.4.7",
+    "cryptography",  # Asegúrate de incluir esta dependencia
+]
+
+base_theme = "Theme.MaterialComponents.Light.DarkActionBar"
+
+build_gradle_dependencies = [
+    "com.google.android.material:material:1.12.0",
+]
+
+[tool.briefcase.app.phone_secure.macOS]
+universal_build = true
+requires = [
+    "toga-cocoa~=0.4.7",
+    "std-nslog~=1.0.3",
+]
+
+[tool.briefcase.app.phone_secure.linux]
+requires = [
+    "toga-gtk~=0.4.7",
+]
+
+[tool.briefcase.app.phone_secure.windows]
+requires = [
+    "toga-winforms~=0.4.7",
+]
+
+[tool.briefcase.app.phone_secure.iOS]
+requires = [
+    "toga-iOS~=0.4.7",
+    "std-nslog~=1.0.3",
+]
+
+[tool.briefcase.app.phone_secure.web]
+requires = [
+    "toga-web~=0.4.7",
+]
+style_framework = "Shoelace v2.3"
+
+# Configuración de dependencias del sistema para Linux
+[tool.briefcase.app.phone_secure.linux.system.debian]
+system_requires = [
+    "libcairo2-dev",
+    "libgirepository1.0-dev",
+]
+system_runtime_requires = [
+    "gir1.2-gtk-3.0",
+    "libcanberra-gtk3-module",
+]
+
+[tool.briefcase.app.phone_secure.linux.system.rhel]
+system_requires = [
+    "cairo-gobject-devel",
+    "gobject-introspection-devel",
+]
+system_runtime_requires = [
+    "gobject-introspection",
+    "gtk3",
+    "libcanberra-gtk3",
+]
+
+[tool.briefcase.app.phone_secure.linux.system.suse]
+system_requires = [
+    "cairo-devel",
+    "gobject-introspection-devel",
+]
+system_runtime_requires = [
+    "gtk3",
+    "gobject-introspection", 
+    "typelib(Gtk) = 3.0",
+    "libcanberra-gtk3-module",
+]
+
+[tool.briefcase.app.phone_secure.linux.system.arch]
+system_requires = [
+    "cairo",
+    "gobject-introspection",
+    "gtk3",
+    "libcanberra",
+]
+
+[tool.briefcase.app.phone_secure.linux.appimage]
+manylinux = "manylinux_2_28"
+system_requires = [
+    "cairo-gobject-devel",
+    "gobject-introspection-devel",
+    "gtk3-devel",
+    "libcanberra-gtk3",
+    "PackageKit-gtk3-module",
+    "gvfs-client",
+]
+linuxdeploy_plugins = [
+    "DEPLOY_GTK_VERSION=3 gtk",
+]
+
+[tool.briefcase.app.phone_secure.linux.flatpak]
+flatpak_runtime = "org.gnome.Platform"
+flatpak_runtime_version = "47"
+flatpak_sdk = "org.gnome.Sdk"

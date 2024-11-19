@@ -1,0 +1,40 @@
+<PhoneSecure>:
+    canvas.before:
+        Color:
+            rgba: 0.1, 0.1, 0.1, 1  # Fondo oscuro elegante
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    ScrollView:
+        size_hint: 1, 0.6
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: self.minimum_height
+            padding: 10
+            spacing: 5
+
+            Label:
+                text: "Dani: *********"
+                font_size: 20
+
+            Label:
+                text: "Mamá: *********"
+                font_size: 20
+
+            Label:
+                text: "Papá: *********"
+                font_size: 20
+
+            Label:
+                text: "Hermana: *********"
+                font_size: 20
+
+            Label:
+                text: "Judas: *********"
+                font_size: 20
+
+            Label:
+                text: "Cuñado: *********"
+                font_size: 20
